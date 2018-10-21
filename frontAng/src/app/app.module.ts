@@ -8,16 +8,19 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
+import { ItemComponent } from './item/item.component';
+
+import { ReportService } from './report.service';
 
 @NgModule({
-  declarations: [AppComponent, ListComponent],
+  declarations: [AppComponent, ListComponent, ItemComponent],
   imports: [
     BrowserModule,
      HttpClientModule,
       ApolloModule,
        HttpLinkModule
       ],
-  providers: [],
+  providers: [ReportService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">
+    <button class="btn btn-success btn-sm" (click)="upvote(report.id)" style="width: 30px;">+</button>
+    <button class="btn btn-red btn-sm" (click)="downvote(report.id)" style="width: 30px;">-</button>
+    <b>Points: </b> {{report.voteCount}}
+  </div>
+  <div class="card-body">
+    <div class="text-right badge badge-secondary">{{report.topic}}</div>
+    <h5 class="card-title">{{report.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">by {{report.author}}</h6>
+    <p class="card-text">{{report.description}}</p>
+    <a href="{{report.url}}" class="card-link">To Report</a>
+  </div>
+</div>

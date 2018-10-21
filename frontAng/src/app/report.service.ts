@@ -10,7 +10,8 @@ import { Report, Query } from './models/types';
 export class ReportService {
   constructor(private apollo: Apollo) {}
 
-  getAllRepors(searchTerm: string){
+  getAllRepors(searchTerm: String) {
+    console.log("SS");
     return this.apollo.watchQuery<Query>({
       pollInterval: 500,
       query: gql`
@@ -36,7 +37,7 @@ export class ReportService {
       );
   }
 
-  upvoteReport(id: string){
+  upvoteReport(id: String) {
     return this.apollo.mutate({
       mutation: gql`
       mutation upvote($id: String!){
@@ -53,11 +54,11 @@ export class ReportService {
     });
   }
 
-  downvoteReport(id: string){
+  downvoteReport(id: String) {
     return this.apollo.mutate({
       mutation: gql`
       mutation downvote($id: String!){
-        upvote(id: $id){
+        downvote(id: $id){
           id,
           title,
           voteCount
